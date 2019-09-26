@@ -21,7 +21,7 @@ CLR_DEFAULT=39          # set underscore off, set default foreground color
 CLR_DEFAULTB=49         # set default background color
 
 CLR_BOLD=1              # set bold
-CLR_BRIGHT=2            # set half-bright (simulated with color on a color display)
+CLR_DIM=2               # set half-bright (simulated with color on a color display)
 CLR_UNDERSCORE=4        # set underscore (simulated with color on a color display)
 CLR_REVERSE=7           # set reverse video
 
@@ -114,7 +114,7 @@ function clr_reset_reverse   { clr_layer $CLR_RESET_REVERSE "$@";   }
 function clr_default         { clr_layer $CLR_DEFAULT "$@";         }
 function clr_defaultb        { clr_layer $CLR_DEFAULTB "$@";        }
 function clr_bold            { clr_layer $CLR_BOLD "$@";            }
-function clr_bright          { clr_layer $CLR_BRIGHT "$@";          }
+function clr_dim             { clr_layer $CLR_DIM "$@";             }
 function clr_underscore      { clr_layer $CLR_UNDERSCORE "$@";      }
 function clr_reverse         { clr_layer $CLR_REVERSE "$@";         }
 function clr_black           { clr_layer $CLR_BLACK "$@";           }
