@@ -9,6 +9,8 @@ else
     is_script=false
 fi
 CLR_ESC="\033["
+BEGIN_NON_PRINTING="\001"
+END_NON_PRINTING="\002"
 
 # All these variables has a function with the same name, but in lower case.
 #
@@ -99,7 +101,7 @@ function clr_escape
 	if ! [ $2 -ge 0 -a $2 -le 47 ] 2>/dev/null; then
 	    echo "clr_escape: argument \"$2\" is out of range" >&2 && return 1
 	fi
-        result="${CLR_ESC}${2}m${result}${CLR_ESC}${CLR_RESET}m"
+        result="${BEGIN_NON_PRINTING}${CLR_ESC}${2}m${END_NON_PRINTING}${result}${BEGIN_NON_PRINTING}${CLR_ESC}${CLR_RESET}m${END_NON_PRINTING}"
 	shift || break
     done
 
